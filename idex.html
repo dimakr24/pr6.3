@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Тест</title>
+    <style>
+        .question {
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="question">
+        <p>Скільки днів в місяці?</p>
+        <input type="radio" id="answer1" name="answer" value="28">
+        <label for="answer1">28</label><br>
+        <input type="radio" id="answer2" name="answer" value="30">
+        <label for="answer2">30</label><br>
+        <input type="radio" id="answer3" name="answer" value="31">
+        <label for="answer3">31</label><br>
+        <button onclick="checkAnswer()">Перевірити</button>
+    </div>
+
+    <p id="result"></p>
+
+    <script>
+        function checkAnswer() {
+            var correctAnswer = "30";
+            var selectedAnswer = document.querySelector('input[name="answer"]:checked');
+
+            if (selectedAnswer) {
+                if (selectedAnswer.value === correctAnswer) {
+                    document.getElementById("result").innerText = "Вірно!";
+                } else {
+                    document.getElementById("result").innerText = "Неправильно. Спробуйте ще раз.";
+                }
+            } else {
+                document.getElementById("result").innerText = "Будь ласка, виберіть відповідь.";
+            }
+        }
+    </script>
+</body>
+</html>
